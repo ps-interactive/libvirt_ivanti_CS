@@ -1,0 +1,39 @@
+<domain type='kvm'>
+  <name>Ivanti Connect Secure</name>
+  <uuid>accdef55-38ee-4783-bc05-7ea86e2e41b1</uuid>
+  <memory>8388608</memory>
+  <currentMemory>8388608</currentMemory>
+  <vcpu>4</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc'>hvm</type>
+    <boot dev='hd'/>
+  </os>
+  <features>
+    <acpi/>
+  </features>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/kvm</emulator>
+    <disk type='file' device='qcow2'>
+      <source file='/home/ubuntu/Virtualisation/Ivanti Connect Secure/Ivanti Connect Secure-disk1.qcow2'/>
+      <target dev='hda' />
+    </disk>
+    <interface type='network'>
+      <mac address='00:0C:29:09:E6:EF'/>
+      <source network='default'/>
+    </interface>
+    <interface type='network'>
+      <mac address='00:0C:29:09:E6:F9'/>
+      <source network='default'/>
+    </interface>
+    <interface type='network'>
+      <mac address='00:0C:29:09:E6:03'/>
+      <source network='default'/>
+    </interface>
+    <input type='mouse' bus='ps2'/>
+    <graphics type='vnc' port='-1' listen='127.0.0.1'/>
+  </devices>
+</domain>
